@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if meta.title %}{{ meta.title }} | {% endif %}{{ site_title }}</title>
+  {% if meta.description %}
+    <meta name="description" content="{{ meta.description|striptags }}" />
+  {% endif %}
+  {% if meta.robots %}
+    <meta name="robots" content="{{ meta.robots }}" />
+  {% endif %}
+
+  {% if current_page %}
+    <link rel="canonical" href="{{ current_page.url }}" />
+  {% endif %}
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ theme_url }}/css/style.css" type="text/css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+  <header class="p-4 text-center">
+    <a href="{{ "index"|link }}">
+      <h1>{{ site_title }}</h1>
+    </a>
+    <nav>
+      <ul class="p-0">
+        {% for page in pages(depthOffset=-1) if page.title and not page.hidden %}
+          <li class="d-inline p-2 m-1 {% if page.id == current_page.id %} active{% endif %}">
+            <a href="{{ page.url }}">{{ page.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    {{ pages["_meta"].meta.tagline|markdown }}
+  </header>
+
+  <main class="container offset-md-3 col-md-6"> 
+
+  {% for page in pages("blog")|sort_by("time")|reverse if not page.hidden %}
+  <div class="row">
+    <div class="offset-md-2 col-md-2 text-muted ">
+      {{ page.date }}
+    </div>
+    <div class="col-md-8"
+      <h3><a href="{{ page.url }}">{{ page.title }}</a></h3>
+      <p class="excerpt">{{ page.description }}</p>
+    </div>
+  </div>
+  {% endfor %}
+  </main>
+
+  <footer class="text-center">
+    &copy; 2022 {{ site_title }}
+    <div class="text-muted">
+      Content permissively <a class="text-muted" href="/?license">licensed</a>; 
+      Source code available <a class="text-muted" href="https://github.com/beyondmeh/beyondmeh.com">here</a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>
