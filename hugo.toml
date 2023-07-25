@@ -10,3 +10,12 @@ mainSections = ["posts"]
 [[params.socials]]
 name = "Github"
 link = "https://github.com/beyondmeh"
+
+
+[menu]
+  [[menu.main]]
+    name       = "About"
+    url        = "about/"
+  [[menu.main]]
+    name       = "Colophon"
+    url        = "colophon/"
