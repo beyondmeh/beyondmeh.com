@@ -8,7 +8,14 @@ headTitle = "BeyondMeh"
 mainSections = ["posts"]
 
 [[params.socials]]
+name = "Email Me"
+icon = "mail"
+link = "mailto:224660+beyondmeh@users.noreply.github.com"
+
+
+[[params.socials]]
 name = "Github"
+icon = "github"
 link = "https://github.com/beyondmeh"
 
 
