@@ -1,21 +1,3 @@
-.htaccess
-config/
-plugins/
-LICENSE
-index.php
-
-# Linux
-*~
-*.swp
-
-# Windows
-Thumbs.db
-desktop.ini
-
-# Mac OS X
+.hugo_build.lock
 .DS_Store
-._*
-
-# Composer
-composer.*
-vendor/
+.vscode

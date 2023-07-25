@@ -1,0 +1,12 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'Beyond Meh'
+theme = "yinyang"
+
+[params]
+headTitle = "BeyondMeh"
+mainSections = ["posts"]
+
+[[params.socials]]
+name = "Github"
+link = "https://github.com/beyondmeh"
