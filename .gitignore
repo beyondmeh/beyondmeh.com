@@ -1,4 +1,7 @@
-.hugo_build.lock
 .DS_Store
-.vscode
 public/
+node_modules
+package-lock.json
+package.json
+db.json
+_config.landscape.yml
