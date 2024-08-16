@@ -1,0 +1,10 @@
+<div class="col-md-12 col-12 mb-4 bio">
+  <%- config.bio %>
+</div>
+
+</div>
+<div class="row">
+
+<% page.posts.forEach(function(item){ %>
+    <%- partial('_partial/portfolio-index', {item: item}) %>
+<% }); %>
