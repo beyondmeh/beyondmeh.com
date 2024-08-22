@@ -14,7 +14,8 @@ bio: "I'm Timothy Keith, an amateur photographer living in <a href='https://www.
 
 # Menu
 menu:
-  About: /about.html
+  About Me: /about.html
+  Now: /now.html
   Colophon: /colophon.html
   Elsewhere: /elsewhere.html
 
